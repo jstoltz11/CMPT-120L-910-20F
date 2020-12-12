@@ -27,3 +27,7 @@ def page2():
 def page3():
     app.logger.info('User is on page 3.')
     return render_template('page3.html')
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
